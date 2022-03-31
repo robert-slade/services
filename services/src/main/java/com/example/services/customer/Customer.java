@@ -3,24 +3,22 @@ package com.example.services;
 public class Customer {
 
     private final short id;
-    private String firstName;
-    private String lastName;
+    private String name;
 
-    public Customer(short id, String firstName, string lastName) {
+    public Customer(short id, String name) {
         this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
+        this.name = name;
     }
 
     public short getId() {
         return id;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getName() {
+        return name;
     }
 
-    public String getLastName() {
-        return lastName;
+    public void setName(String name) {
+        this.name = name;
     }
 }
