@@ -1,12 +1,18 @@
 package com.example.services;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Customer {
 
-    private final short id;
+    private @Id @GeneratedValue final short id;
     private String name;
 
-    public Customer(short id, String name) {
-        this.id = id;
+    public Customer() {}
+
+    public Customer(String name) {
         this.name = name;
     }
 
