@@ -7,7 +7,7 @@ import javax.persistence.Id;
 @Entity
 public class Customer {
 
-    private @Id @GeneratedValue final short id;
+    private @Id @GeneratedValue Short id;
     private String name;
 
     public Customer() {}
@@ -16,12 +16,16 @@ public class Customer {
         this.name = name;
     }
 
-    public short getId() {
+    public Short getId() {
         return id;
     }
 
     public String getName() {
         return name;
+    }
+
+    public void setId(Short id) {
+        this.id = id;
     }
 
     public void setName(String name) {

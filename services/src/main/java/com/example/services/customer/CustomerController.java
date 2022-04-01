@@ -33,6 +33,9 @@ class CustomerController {
         return repository.findById(id).map(customer -> {
             customer.setName(newCustomer.getName());
             return repository.save(customer);
+        }).orElseGet(() -> {
+            newCustomer.setId(id);
+            return repository.save(newCustomer);
         });
     }
 
