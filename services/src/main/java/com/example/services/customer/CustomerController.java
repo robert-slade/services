@@ -28,7 +28,7 @@ class CustomerController {
         return repository.save(newCustomer);
     }
 
-    @PutMapping("/customers/update")
+    @PutMapping("/customers/update/{id}")
     Customer updateCustomer(@RequestBody Customer newCustomer, @PathVariable Short id) {
         return repository.findById(id).map(customer -> {
             customer.setName(newCustomer.getName());
@@ -39,7 +39,7 @@ class CustomerController {
         });
     }
 
-    @DeleteMapping("/customers/delete")
+    @DeleteMapping("/customers/delete/{id}")
     void deleteCustomer(@PathVariable Short id) {
         repository.deleteById(id);
     }
